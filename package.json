@@ -1,0 +1,42 @@
+{
+  "name": "@splunk/open-ai-app",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "format": "git ls-files | grep -E \"\\.(jsx?|css)$\" | xargs prettier --write",
+    "format:verify": "git ls-files | grep -E \"\\.(jsx?|css)$\" | xargs prettier --list-different",
+    "lint": "lerna run lint --no-sort",
+    "setup": "yarn && lerna run build",
+    "start": "lerna run start --stream --no-sort --concurrency 100",
+    "test": "lerna run test --stream --no-sort"
+  },
+  "devDependencies": {
+    "lerna": "^2.9.0",
+    "prettier": "^2.0.5"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@splunk/search-job": "^3.1.0",
+    "browserify-fs": "^1.0.0",
+    "buffer": "^6.0.3",
+    "highlight.js": "^11.9.0",
+    "js-tiktoken": "^1.0.12",
+    "markdown-to-jsx": "^7.4.7",
+    "marked": "^13.0.1",
+    "marked-react": "^2.0.0",
+    "node-polyfill-webpack-plugin": "^4.0.0",
+    "openai-gpt-token-counter": "^1.1.1",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-markdown": "^8.0.6",
+    "react-syntax-highlighter": "^15.5.0",
+    "tiktoken": "^1.0.15"
+  }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<view template="open-ai-features:/templates/start.html" type="html">
+	<label>Prompts</label>
+</view>
