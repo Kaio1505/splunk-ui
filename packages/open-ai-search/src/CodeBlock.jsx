@@ -9,16 +9,23 @@ const CodeBlock = ({ className, children }) => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <SyntaxHighlighter
-        language={language}
-        style={darcula}
-        showLineNumbers={true}
-      >
-        {code}
-      </SyntaxHighlighter>
-      <CopyToClipboard text={code}>
-        <button style={copyButtonStyle}>Copy</button>
-      </CopyToClipboard>
+      {language ? (
+        <>
+          <SyntaxHighlighter
+            language={language}
+            style={darcula}
+            showLineNumbers={true}
+          >
+            {code}
+          </SyntaxHighlighter>
+          <CopyToClipboard text={code}>
+            <button style={copyButtonStyle}>Copy</button>
+          </CopyToClipboard>
+        </>
+      ) : (
+        <code style={{backgroundColor:'#dcdfe6'}}>
+        {code}</code> // Renderiza apenas um span se não houver linguagem
+      )}
     </div>
   );
 };
